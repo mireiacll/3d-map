@@ -9,18 +9,27 @@ export class BuildingLayer {
   }
 
   async load() {
-    const { tiles3DUrl } = CESIUM_CONFIG.BUILDINGS;
+    const { ionAssetId } = CESIUM_CONFIG.BUILDINGS;
+
+    if (!ionAssetId || ionAssetId === 0) {
+      console.warn('⚠️ BuildingLayer: No Ion asset ID set. Please upload your 3D Tiles to Cesium Ion and set CESIUM_CONFIG.BUILDINGS.ionAssetId in config.js');
+      return null;
+    }
 
     try {
-      this.tileset = await Cesium.Cesium3DTileset.fromUrl(tiles3DUrl);
+      console.log(`Loading buildings from Cesium Ion asset ${ionAssetId}...`);
+ 
+      this.tileset = await Cesium.Cesium3DTileset.fromIonAssetId(ionAssetId, {
+        // Optional: tune performance
+        maximumScreenSpaceError: 16,
+      });
+ 
       this.viewer.scene.primitives.add(this.tileset);
-
-      await this.tileset.readyPromise;
-
+ 
       this.tileset.show = this.isVisible;
-
       this._applyStyle();
-      
+ 
+      console.log('✓ Buildings loaded from Cesium Ion');
       return this.tileset;
     } catch (error) {
       console.error('❌ Failed to load:', error);

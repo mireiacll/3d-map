@@ -19,7 +19,8 @@ export const CESIUM_CONFIG = {
   
   BUILDINGS: {
     use3DTiles: true,
-    tiles3DUrl: './3dtiles_terrain4/tileset.json'
+    //tiles3DUrl: './3dtiles_terrain4/tileset.json'
+    ionAssetId: 4649301,
   },
   
   IMAGERY: {
