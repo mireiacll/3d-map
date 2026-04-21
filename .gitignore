@@ -1,0 +1,14 @@
+# Raw and processed GIS data (too large for GitHub)
+node_modules/
+dist/
+.vite/
+public/3dtiles_terrain4/
+public/Workers/
+public/Assets/
+public/Widgets/
+public/ThirdParty/
+data/
+
+# OS files
+.DS_Store
+Thumbs.db
