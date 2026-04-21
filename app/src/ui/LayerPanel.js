@@ -73,6 +73,7 @@ export class LayerPanel {
       () => this.scene.globe.showGroundAtmosphere,
       (checked) => { 
         this.scene.globe.showGroundAtmosphere = checked;
+        this.scene.skyAtmosphere.show = checked;
         this.scene.requestRender();
       });
   }

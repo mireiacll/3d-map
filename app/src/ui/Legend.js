@@ -39,11 +39,12 @@ export class Legend {
     wrapper.appendChild(label);
     
     const types = [
-      { color: '#FF6B6B', label: 'Apartments' },
-      { color: '#4ECDC4', label: 'Commercial' },
-      { color: '#45B7D1', label: 'Office' },
-      { color: '#FFA07A', label: 'Residential' },
-      { color: '#98D8C8', label: 'House' },
+      { color: '#FF6B6B', label: 'High-Rise (Apts/Condo)' },
+      { color: '#4ECDC4', label: 'Medium-Rise (Comm/Office)' },
+      { color: '#98D8C8', label: 'Low-Rise (Houses)' },
+      { color: '#A29BFE', label: 'Industrial (Factory/Wh)' },
+      { color: '#FFE66D', label: 'Public (School/Gov)' },
+      { color: '#DFE6E9', label: 'Small (Sheds/Garages)' },
       { color: '#ADD8E6', label: 'Other' }
     ];
     

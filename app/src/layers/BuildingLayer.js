@@ -33,12 +33,14 @@ export class BuildingLayer {
     this.tileset.style = new Cesium.Cesium3DTileStyle({
       color: {
         conditions: [
-          ['${building} === "apartments"', 'color("#FF6B6B", 0.7)'],
-          ['${building} === "commercial"', 'color("#4ECDC4", 0.7)'],
-          ['${building} === "office"', 'color("#45B7D1", 0.7)'],
-          ['${building} === "residential"', 'color("#FFA07A", 0.7)'],
-          ['${building} === "house"', 'color("#98D8C8", 0.7)'],
-          ['true', 'color("#ADD8E6", 0.7)']
+          // Match the categories we created in the Python script
+          ['${building_type} === "high_rise"', 'color("#FF6B6B", 0.8)'],    // Soft Red
+          ['${building_type} === "medium_rise"', 'color("#4ECDC4", 0.8)'],  // Turquoise
+          ['${building_type} === "low_rise"', 'color("#98D8C8", 0.8)'],     // Sage Green
+          ['${building_type} === "industrial"', 'color("#A29BFE", 0.8)'],   // Purple
+          ['${building_type} === "public"', 'color("#FFE66D", 0.8)'],       // Soft Yellow
+          ['${building_type} === "small"', 'color("#DFE6E9", 0.8)'],        // Light Grey
+          ['true', 'color("#ADD8E6", 0.7)']                                // Default Blue
         ]
       },
       show: true
