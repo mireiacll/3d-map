@@ -1,34 +1,3 @@
-// import TileLayer from 'ol/layer/Tile.js';
-// import TileWMS from 'ol/source/TileWMS.js';
-
-// import { GEOSERVER_BASE } from '../config.js';
-// const GEOSERVER_URL = `${GEOSERVER_BASE}/korea_map/wms`;
-// //const GEOSERVER_URL = '/geoserver/korea_map/wms';
-
-// export class ContourLayer {
-//   constructor() {
-//     this.layer = new TileLayer({
-//       source: new TileWMS({
-//         url: GEOSERVER_URL,
-//         params: {
-//           LAYERS: 'korea_map:contour',
-//           STYLES:'korea_map:contour_style',
-//           TILED: true,
-//         },
-//         serverType: 'geoserver',
-//       }),
-//       visible: true,
-//       opacity: 0.8,
-//       minZoom:12,
-//       properties: { name: 'contours' },
-//     });
-//   }
-
-//   getLayer() {
-//     return this.layer;
-//   }
-// }
-
 import TileLayer from 'ol/layer/Tile.js';
 import WMTS from 'ol/source/WMTS.js';
 import WMTSTileGrid from 'ol/tilegrid/WMTS.js';
@@ -77,3 +46,65 @@ export class ContourLayer {
     return this.layer;
   }
 }
+
+// import * as Cesium from 'cesium';
+
+// export class ContourLayer {
+//   constructor(viewer) {
+//     this.viewer = viewer;
+//     this.dataSource = null;
+//     this.isVisible = false;
+//     this.alpha = 0.8; // Store opacity here
+//   }
+
+//   async load() {
+//     try {
+//       // Use the Asset ID from your Cesium Ion account
+//       const resource = await Cesium.IonResource.fromAssetId(4648954);
+//       this.dataSource = await Cesium.GeoJsonDataSource.load(resource, {
+//         clampToGround: true // Drapes contours over the 3D terrain
+//       });
+
+//       this._styleContours();
+//       this.viewer.dataSources.add(this.dataSource);
+//       this.dataSource.show = this.isVisible;
+//     } catch (error) {
+//       console.error('❌ Contour Load Error:', error);
+//     }
+//   }
+
+//   _styleContours() {
+//     const entities = this.dataSource.entities.values;
+//     // Optimization: Only draw lines when the camera is closer than 15km
+//     const condition = new Cesium.DistanceDisplayCondition(0, 15000);
+
+//     entities.forEach(entity => {
+//       if (entity.polyline) {
+//         entity.polyline.width = 2;
+//         entity.polyline.distanceDisplayCondition = condition;
+//         // Apply the stored alpha to the color
+//         const baseColor = Cesium.Color.fromCssColorString('#8B4513');
+//         entity.polyline.material = baseColor.withAlpha(this.alpha);
+//       }
+//     });
+//   }
+
+//   // Add the missing methods that LayerPanel is looking for
+//   getLayer() {
+//     return this.dataSource; 
+//   }
+
+//   setVisibility(visible) {
+//     this.isVisible = visible;
+//     if (this.dataSource) this.dataSource.show = visible;
+//   }
+
+//   getVisibility() {
+//     return this.isVisible;
+//   }
+
+//   setOpacity(value) {
+//     this.alpha = value;
+//     if (this.dataSource) this._styleContours();
+//   }
+// }

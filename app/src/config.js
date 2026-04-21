@@ -1,6 +1,7 @@
 export const CESIUM_CONFIG = {
-  ION_TOKEN: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjY2ZjNTAyMi1iZWY0LTQ0MjEtOTZkNC03YzlhYmQ4NmUwYjYiLCJpZCI6NDA1OTA3LCJpYXQiOjE3NzM4ODY0MTJ9.-uQEXaxTOUCj19ednFa88VbJF89Oy4srPJGL1M-ORrw',
-  
+  //ION_TOKEN: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjY2ZjNTAyMi1iZWY0LTQ0MjEtOTZkNC03YzlhYmQ4NmUwYjYiLCJpZCI6NDA1OTA3LCJpYXQiOjE3NzM4ODY0MTJ9.-uQEXaxTOUCj19ednFa88VbJF89Oy4srPJGL1M-ORrw',
+  ION_TOKEN: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ODFhYzU2Yy1jOTcwLTQ0YzUtOWUzZi0xNzk3OGZmNTE5NzUiLCJpZCI6NDIxMDk1LCJpYXQiOjE3NzY3NTA5MDN9.lcDgcMhNCUUeaTYsrQSRafTqVgF4YhqEe8eo-5yxi5A',
+
   DEFAULT_VIEW: {
     longitude: 127.5,
     latitude: 36.5,
@@ -11,8 +12,9 @@ export const CESIUM_CONFIG = {
   },
   
   TERRAIN: {
-    useIonTerrain: true,
-    ionAssetId: 4634446,  // Your terrain asset ID
+    useIonTerrain: true, 
+    // ionAssetId: 4634446,  // mireia1
+    ionAssetId: 4649275,  // mireia2
   },
   
   BUILDINGS: {
