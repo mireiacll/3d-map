@@ -28,7 +28,7 @@ async function init() {
     await buildingLayer.load();
     
     const contourLayer = new ContourLayer(viewer);
-    //contourLayer.load();
+    await contourLayer.load();
     
     // Initialize UI
     const infoPanel = new InfoPanel('info-panel');

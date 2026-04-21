@@ -33,11 +33,12 @@ export const CESIUM_CONFIG = {
   },
   
   CONTOURS: {
-    useWmts: true,
-    wmtsUrl: '/geoserver/gwc/service/wmts',
-    layer: 'korea_map:contour',
-    matrixSet: 'EPSG:900913',
-    style: 'korea_map:contour_style'
+    minorSpacing: 50,    // Minor contour every 50m  
+    majorSpacing: 200,   // Major contour every 200m
+    minorColor: '#c8a882',
+    majorColor: '#8B4513',
+    minorWidth: 0.8,
+    majorWidth: 2.5,
   }
 };
 

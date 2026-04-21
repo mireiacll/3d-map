@@ -154,7 +154,8 @@ export class LayerPanel {
     
     checkbox.addEventListener('change', () => {
       setStateFn(checkbox.checked);
-      
+      this.scene.requestRender();
+
       // Update legend visibility
       if (layerName === 'dem') {
         this._updateLegend('dem', checkbox.checked);
