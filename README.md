@@ -1,6 +1,6 @@
-# 2d-map
+# 3d-map
 
 
 
-https://fluent-agrarianly-viviana.ngrok-free.dev/map/
+https://fluent-agrarianly-viviana.ngrok-free.dev/map3d/
 

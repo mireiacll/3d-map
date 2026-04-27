@@ -68,7 +68,7 @@ export class BuildingPicker {
     const buildingInfo = {
       type: 'building',
       data: {
-        osm_id: feature.getProperty('osm_id') || 'N/A',
+        osm_id: feature.getProperty('osm_id') || feature.getProperty( 'A0')|| 'N/A',
         name: feature.getProperty('name') || 'Unknown',
         building: feature.getProperty('building_type') || feature.getProperty('building') || 'N/A',
         height: `${trueHeight}m`
